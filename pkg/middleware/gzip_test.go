@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/caas-team/apiserver/pkg/fakes"
 	"github.com/stretchr/testify/assert"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/fakes"
 )
 
 func NewRequest(accept string) *http.Request {

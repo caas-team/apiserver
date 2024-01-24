@@ -6,14 +6,14 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/caas-team/apiserver/pkg/builtin"
+	"github.com/caas-team/apiserver/pkg/handlers"
+	"github.com/caas-team/apiserver/pkg/metrics"
+	"github.com/caas-team/apiserver/pkg/parse"
+	"github.com/caas-team/apiserver/pkg/subscribe"
+	"github.com/caas-team/apiserver/pkg/types"
+	"github.com/caas-team/apiserver/pkg/writer"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/builtin"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/handlers"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/metrics"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/parse"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/subscribe"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/writer"
 )
 
 type RequestHandler interface {

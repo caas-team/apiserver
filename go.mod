@@ -1,4 +1,4 @@
-module gitlab.devops.telekom.de/caas/rancher/apiserver
+module github.com/caas-team/apiserver
 
 go 1.20
 

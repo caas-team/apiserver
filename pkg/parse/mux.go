@@ -3,8 +3,8 @@ package parse
 import (
 	"net/http"
 
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/gorilla/mux"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 type Vars struct {

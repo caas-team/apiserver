@@ -4,11 +4,11 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/caas-team/apiserver/pkg/server"
+	"github.com/caas-team/apiserver/pkg/store/apiroot"
+	"github.com/caas-team/apiserver/pkg/store/empty"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/gorilla/mux"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/server"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/apiroot"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/empty"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 type Foo struct {

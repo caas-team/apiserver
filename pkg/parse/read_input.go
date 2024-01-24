@@ -6,10 +6,10 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/caas-team/apiserver/pkg/apierror"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/data/convert"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 	"k8s.io/apimachinery/pkg/util/yaml"
 )
 

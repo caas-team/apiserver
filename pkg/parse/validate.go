@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/caas-team/apiserver/pkg/apierror"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 var (

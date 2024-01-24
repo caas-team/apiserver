@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/gorilla/websocket"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 type WatchSession struct {

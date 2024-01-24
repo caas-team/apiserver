@@ -5,9 +5,9 @@ import (
 	"path"
 	"strings"
 
+	"github.com/caas-team/apiserver/pkg/store/empty"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/empty"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 func Register(apiSchemas *types.APISchemas, versions []string, roots ...string) {

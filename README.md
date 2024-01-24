@@ -31,7 +31,7 @@ There are a few main types to be aware of.
 
 ### APISchema
 
-[APISchema](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#APISchema)
+[APISchema](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#APISchema)
 adds additional functionality on top of [wrangler's Schema
 type](https://pkg.go.dev/github.com/rancher/wrangler/pkg/schemas#Schema).
 In addition to metadata about the type of object it represents, it also defines
@@ -39,12 +39,12 @@ CRUD handlers, formatting transformations, and the backing Store.
 
 ### Store
 
-[Store](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#Store) is an
+[Store](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#Store) is an
 interface for interacting with `APIObject`s, `APIObjectList`s, and `APIEvent`s.
 
 ### APIRequest
 
-[APIRequest](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#APIRequest)
+[APIRequest](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#APIRequest)
 is a parsed version of an `http.Request` that provides a standardized way of
 interacting with a request. The default parser makes a set of assumptions about
 how the request is formatted and routed so that it can populate fields such as
@@ -55,7 +55,7 @@ schemas, an access control interface, a response writer and error handler.
 
 ### APIObject
 
-[APIObject](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#APIObject)
+[APIObject](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#APIObject)
 is a wrapper around an underlying object. The struct provides the object's type
 and ID along with the unmodified object itself. If the underlying API object is
 a Kubernetes resource, the ID is the object's name and namespace for namespaced
@@ -65,13 +65,13 @@ processing the object.
 
 ### APIObjectList
 
-[APIObjectList](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#APIObjectList)
+[APIObjectList](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#APIObjectList)
 is returned for list requests. It includes the slice of objects returned as
 well as chunking and pagination metadata if the list is not complete.
 
 ### APIEvent
 
-[APIEvent](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types#APIEvent)
+[APIEvent](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/types#APIEvent)
 is emitted on a channel created for a watch request. It is a wrapper for a
 Kubernetes event.
 
@@ -81,7 +81,7 @@ Usage
 The API server starts with an HTTP server:
 
 ```go
-import "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/server"
+import "github.com/caas-team/apiserver/pkg/server"
 s := server.DefaultAPIServer()
 ```
 
@@ -100,8 +100,8 @@ in the customize function:
 
 ```go
 import (
-    "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
-    "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/empty"
+    "github.com/caas-team/apiserver/pkg/types"
+    "github.com/caas-team/apiserver/pkg/store/empty"
 )
 type DuckStore struct {
     ducks map[string]Duck
@@ -213,7 +213,7 @@ Defines the format for a list of objects.
 Not built in to the default schemas, but can be added with:
 
 ```go
-import "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/apiroot"
+import "github.com/caas-team/apiserver/pkg/store/apiroot"
 apiroot.Register(s.Schemas, []string{"v1"})
 ```
 
@@ -225,7 +225,7 @@ for more than one schema version to coexist.
 Also not built in, but can be added with
 
 ```go
-import "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/subscribe"
+import "github.com/caas-team/apiserver/pkg/subscribe"
 subscribe.Register(s.Schemas, nil, "")
 ```
 
@@ -237,7 +237,7 @@ A useful tool for connecting to a websocket without a browser is
 
 A subscription stream is started by making a websocket request for the
 `subscribe` type, which is routed to the
-[Subscribe](https://pkg.go.dev/gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/subscribe#Subscribe)
+[Subscribe](https://pkg.go.dev/github.com/caas-team/apiserver/pkg/subscribe#Subscribe)
 schema. It uses a custom handler to upgrade the connection to a websocket
 connection.
 
@@ -284,9 +284,9 @@ for instance, can be defined by overriding the `SchemaBasedAccess` struct:
 ```go
 import (
     "k8s.io/apiserver/pkg/endpoints/request"
-    "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-    "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/server"
-    "gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
+    "github.com/caas-team/apiserver/pkg/apierror"
+    "github.com/caas-team/apiserver/pkg/server"
+    "github.com/caas-team/apiserver/pkg/types"
 )
 type accessControl struct{
     server.SchemaBasedAccess

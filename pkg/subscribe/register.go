@@ -3,7 +3,7 @@ package subscribe
 import (
 	"net/http"
 
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
+	"github.com/caas-team/apiserver/pkg/types"
 )
 
 type SchemasGetter func(apiOp *types.APIRequest) *types.APISchemas

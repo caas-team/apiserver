@@ -3,9 +3,9 @@ package handlers
 import (
 	"strconv"
 
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/metrics"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
+	"github.com/caas-team/apiserver/pkg/apierror"
+	"github.com/caas-team/apiserver/pkg/metrics"
+	"github.com/caas-team/apiserver/pkg/types"
 )
 
 func MetricsHandler(successCode string, next func(apiRequest *types.APIRequest) (types.APIObject, error)) func(apiRequest *types.APIRequest) (types.APIObject, error) {

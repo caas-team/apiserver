@@ -1,9 +1,9 @@
 package handlers
 
 import (
+	"github.com/caas-team/apiserver/pkg/apierror"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 func ByIDHandler(request *types.APIRequest) (types.APIObject, error) {

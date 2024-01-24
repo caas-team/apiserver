@@ -5,16 +5,16 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/caas-team/apiserver/pkg/apierror"
+	"github.com/caas-team/apiserver/pkg/fakes"
+	"github.com/caas-team/apiserver/pkg/parse"
+	"github.com/caas-team/apiserver/pkg/types"
+	"github.com/caas-team/apiserver/pkg/writer"
 	"github.com/golang/mock/gomock"
 	"github.com/rancher/wrangler/pkg/schemas"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/fakes"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/parse"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/writer"
 )
 
 type ServerSuite struct {

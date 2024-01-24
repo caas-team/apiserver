@@ -3,8 +3,8 @@ package subscribe
 import (
 	"io"
 
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/writer"
+	"github.com/caas-team/apiserver/pkg/types"
+	"github.com/caas-team/apiserver/pkg/writer"
 )
 
 type Converter struct {

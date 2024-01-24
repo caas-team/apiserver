@@ -3,10 +3,10 @@ package builtin
 import (
 	"net/http"
 
+	"github.com/caas-team/apiserver/pkg/store/schema"
+	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas"
 	"github.com/rancher/wrangler/pkg/slice"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/schema"
-	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 var (
