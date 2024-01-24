@@ -6,15 +6,15 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/rancher/apiserver/pkg/apierror"
-	"github.com/rancher/apiserver/pkg/fakes"
-	"github.com/rancher/apiserver/pkg/parse"
-	"github.com/rancher/apiserver/pkg/types"
-	"github.com/rancher/apiserver/pkg/writer"
 	"github.com/rancher/wrangler/pkg/schemas"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/apierror"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/fakes"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/parse"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/writer"
 )
 
 type ServerSuite struct {

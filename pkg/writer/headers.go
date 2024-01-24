@@ -1,7 +1,7 @@
 package writer
 
 import (
-	"github.com/rancher/apiserver/pkg/types"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 func AddCommonResponseHeader(apiOp *types.APIRequest) error {

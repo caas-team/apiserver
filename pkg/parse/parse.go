@@ -5,8 +5,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/rancher/apiserver/pkg/types"
-	"github.com/rancher/apiserver/pkg/urlbuilder"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/urlbuilder"
 )
 
 const (

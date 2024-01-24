@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/rancher/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
 	"github.com/sirupsen/logrus"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 var upgrader = websocket.Upgrader{

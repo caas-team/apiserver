@@ -1,8 +1,8 @@
 package empty
 
 import (
-	"github.com/rancher/apiserver/pkg/types"
 	"github.com/rancher/wrangler/pkg/schemas/validation"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 type Store struct {

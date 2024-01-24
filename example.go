@@ -5,10 +5,10 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/rancher/apiserver/pkg/server"
-	"github.com/rancher/apiserver/pkg/store/apiroot"
-	"github.com/rancher/apiserver/pkg/store/empty"
-	"github.com/rancher/apiserver/pkg/types"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/server"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/apiroot"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/store/empty"
+	"gitlab.devops.telekom.de/caas/rancher/apiserver/pkg/types"
 )
 
 type Foo struct {
