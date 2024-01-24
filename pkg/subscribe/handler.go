@@ -100,5 +100,6 @@ func writeData(apiOp *types.APIRequest, getter SchemasGetter, c *websocket.Conn,
 	}
 	defer messageWriter.Close()
 
+	logrus.Debugf("Sending event %v from namespace %v", event.Name, event.Namespace)
 	return json.NewEncoder(messageWriter).Encode(event)
 }
