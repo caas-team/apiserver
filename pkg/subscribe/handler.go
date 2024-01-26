@@ -2,6 +2,7 @@ package subscribe
 
 import (
 	"encoding/json"
+	"runtime/debug"
 	"time"
 
 	"github.com/caas-team/apiserver/pkg/types"
@@ -93,6 +94,12 @@ func writeData(apiOp *types.APIRequest, getter SchemasGetter, c *websocket.Conn,
 		if r := recover(); r != nil {
 			logrus.Errorf("Panic while writing data for API Resource Type %v", event.ResourceType)
 			logrus.Errorf("API operation was: %v", apiOp.Name)
+			if event.ResourceType == "counts" {
+				logrus.Errorf("event.ResourceType was counts. Ignoring panic")
+				logrus.Error(r)
+				logrus.Error(debug.Stack())
+				return
+			}
 			panic(r)
 		}
 	}()
