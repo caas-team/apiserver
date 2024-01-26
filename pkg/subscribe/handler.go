@@ -2,7 +2,6 @@ package subscribe
 
 import (
 	"encoding/json"
-	"os"
 	"time"
 
 	"github.com/caas-team/apiserver/pkg/types"
@@ -88,20 +87,13 @@ func handler(apiOp *types.APIRequest, getter SchemasGetter, serverVersion string
 
 func writeData(apiOp *types.APIRequest, getter SchemasGetter, c *websocket.Conn, event types.APIEvent) error {
 
-	l := logrus.New()
-	fmt := &logrus.TextFormatter{
-		TimestampFormat: "2006-01-02 15:04:05.000000",
-		FullTimestamp:   true,
-	}
-	l.SetFormatter(fmt)
-
 	// this function panics but we don't know why yet
 	// recover from the panic and print the API Resource Type
 	defer func() {
 		if r := recover(); r != nil {
-			l.Errorf("Panic while writing data for API Resource Type %v", event.ResourceType)
-			l.Errorf("API operation was: %v", apiOp.Name)
-			os.Exit(666)
+			logrus.Errorf("Panic while writing data for API Resource Type %v", event.ResourceType)
+			logrus.Errorf("API operation was: %v", apiOp.Name)
+			panic(r)
 		}
 	}()
 	event = MarshallObject(apiOp, getter, event)
@@ -118,6 +110,6 @@ func writeData(apiOp *types.APIRequest, getter SchemasGetter, c *websocket.Conn,
 	}
 	defer messageWriter.Close()
 
-	l.Debugf("Sending event %v with ResourceType %v", event.Name, event.ResourceType)
+	logrus.Debugf("Sending event %v with ResourceType %v", event.Name, event.ResourceType)
 	return json.NewEncoder(messageWriter).Encode(event)
 }
