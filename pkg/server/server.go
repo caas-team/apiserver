@@ -13,7 +13,7 @@ import (
 	"github.com/caas-team/apiserver/pkg/subscribe"
 	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/caas-team/apiserver/pkg/writer"
-	"github.com/rancher/wrangler/pkg/schemas/validation"
+	"github.com/rancher/wrangler/v2/pkg/schemas/validation"
 )
 
 type RequestHandler interface {

@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/caas-team/apiserver/pkg/types"
-	"github.com/rancher/wrangler/pkg/schemas"
+	"github.com/rancher/wrangler/v2/pkg/schemas"
 	"github.com/stretchr/testify/assert"
 )
 

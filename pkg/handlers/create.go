@@ -4,7 +4,7 @@ import (
 	"github.com/caas-team/apiserver/pkg/apierror"
 	"github.com/caas-team/apiserver/pkg/parse"
 	"github.com/caas-team/apiserver/pkg/types"
-	"github.com/rancher/wrangler/pkg/schemas/validation"
+	"github.com/rancher/wrangler/v2/pkg/schemas/validation"
 )
 
 func CreateHandler(apiOp *types.APIRequest) (types.APIObject, error) {

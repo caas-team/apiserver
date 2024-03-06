@@ -7,7 +7,7 @@ import (
 
 	"github.com/caas-team/apiserver/pkg/types"
 	"github.com/gorilla/websocket"
-	"github.com/rancher/wrangler/pkg/schemas/validation"
+	"github.com/rancher/wrangler/v2/pkg/schemas/validation"
 	"github.com/sirupsen/logrus"
 )
 

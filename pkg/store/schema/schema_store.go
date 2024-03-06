@@ -4,8 +4,8 @@ import (
 	"github.com/caas-team/apiserver/pkg/apierror"
 	"github.com/caas-team/apiserver/pkg/store/empty"
 	"github.com/caas-team/apiserver/pkg/types"
-	"github.com/rancher/wrangler/pkg/schemas/definition"
-	"github.com/rancher/wrangler/pkg/schemas/validation"
+	"github.com/rancher/wrangler/v2/pkg/schemas/definition"
+	"github.com/rancher/wrangler/v2/pkg/schemas/validation"
 )
 
 type Store struct {
