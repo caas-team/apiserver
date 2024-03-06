@@ -35,9 +35,9 @@ type Pagination struct {
 	Partial bool   `json:"partial,omitempty"`
 }
 
-func (r RawResource) MarshalJSON() ([]byte, error) {
+func (r *RawResource) MarshalJSON() ([]byte, error) {
 	type r_ RawResource
-	outer, err := json.Marshal((r_)(r))
+	outer, err := json.Marshal((*r_)(r))
 	if err != nil {
 		return nil, err
 	}
@@ -65,7 +65,7 @@ func (r RawResource) MarshalJSON() ([]byte, error) {
 	return append(outer, data[1:]...), nil
 }
 
-func (r RawResource) AddAction(apiOp *APIRequest, name string) {
+func (r *RawResource) AddAction(apiOp *APIRequest, name string) {
 	r.Actions[name] = apiOp.URLBuilder.Action(r.Schema, r.ID, name)
 }
 
